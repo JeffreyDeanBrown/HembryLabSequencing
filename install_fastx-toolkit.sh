@@ -16,7 +16,9 @@ rm libgtextutils-0.7.tar.gz
 #download patch script
 tar -xjf fastx_toolkit-0.0.14.tar.bz2
 cd fastx_toolkit-0.0.14/
- wget https://github.com/agordon/fastx_toolkit/files/1182724/fastx-toolkit-gcc7-patch.txt
+wget https://raw.githubusercontent.com/JeffreyDeanBrown/HembryLabSequencing/main/MacOSPatch.txt
+patch < MacOSPatch.txt
+wget https://github.com/agordon/fastx_toolkit/files/1182724/fastx-toolkit-gcc7-patch.txt
 patch  -p1 < fastx-toolkit-gcc7-patch.txt
 ./configure
 make
