@@ -1,4 +1,4 @@
---- src/libfastx/fastx.h.orig   2018-05-16 14:50:08 UTC
+--- src/libfastx/fastx.h.orig
 +++ src/libfastx/fastx.h
 @@ -58,7 +58,7 @@ typedef enum {
         OUTPUT_SAME_AS_INPUT=3
