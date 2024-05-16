@@ -6,7 +6,7 @@ wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutil
 wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
 tar -xzf libgtextutils-0.7.tar.gz
 cd libgtextutils-0.7/
-sed -i '47s/input_stream/static_cast<bool>(input_stream)/' 'src/gtextutils/text_line_reader.cpp'
+sed -i '' '47s/input_stream/static_cast<bool>(input_stream)/' src/gtextutils/text_line_reader.cpp
 ./configure
 make
 make install
