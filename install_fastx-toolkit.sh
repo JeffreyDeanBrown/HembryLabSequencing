@@ -1,6 +1,6 @@
 # This script is written to install the FastX-Toolkit and it's libraries, including patching and updating the code to make it usable
 # Written by Jeffrey Brown (brown.jeffrey.dean@gmail.com) 
-# Last updated 05-16-2024 
+# Last updated 05-23-2024 
 
 wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
 wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
