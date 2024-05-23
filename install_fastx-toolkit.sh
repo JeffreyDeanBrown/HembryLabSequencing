@@ -9,7 +9,7 @@ cd libgtextutils-0.7/
 sed -i '' '47s/input_stream/static_cast<bool>(input_stream)/' src/gtextutils/text_line_reader.cpp
 ./configure
 make
-make install
+sudo make install
 cd ..
 rm -r libgtextutils-0.7/
 rm libgtextutils-0.7.tar.gz
