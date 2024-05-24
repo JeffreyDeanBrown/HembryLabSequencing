@@ -2,8 +2,8 @@
 # Written by Jeffrey Brown (brown.jeffrey.dean@gmail.com) 
 # Last updated 05-23-2024 
 
-curl -o ./libgtextutils-0.7.tar.gz https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
-curl -o ./fastx_toolkit-0.0.14.tar.bz2 https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
+curl -LO https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
+curl -LO https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
 tar -xzf libgtextutils-0.7.tar.gz
 cd libgtextutils-0.7/
 sed -i '' '47s/input_stream/static_cast<bool>(input_stream)/' src/gtextutils/text_line_reader.cpp
@@ -16,9 +16,9 @@ rm libgtextutils-0.7.tar.gz
 #download patch script
 tar -xjf fastx_toolkit-0.0.14.tar.bz2
 cd fastx_toolkit-0.0.14/
-curl -o ./MacOSPatch.txt https://raw.githubusercontent.com/JeffreyDeanBrown/HembryLabSequencing/main/MacOSPatch.txt
+curl -LO https://raw.githubusercontent.com/JeffreyDeanBrown/HembryLabSequencing/main/MacOSPatch.txt
 patch < MacOSPatch.txt
-curl -o ./fastx-toolkit-gcc7-patch.txt https://github.com/agordon/fastx_toolkit/files/1182724/fastx-toolkit-gcc7-patch.txt
+curl -LO https://github.com/agordon/fastx_toolkit/files/1182724/fastx-toolkit-gcc7-patch.txt
 patch  -p1 < fastx-toolkit-gcc7-patch.txt
 ./configure
 make
