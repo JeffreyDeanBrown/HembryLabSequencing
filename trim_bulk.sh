@@ -5,7 +5,7 @@
 #
 # This trims all of the fastq files in a directory and spits out a statistics page with a summary as well as info on every sequence trimmed
 # written by Jeff Brown (brown.jeffrey.dean@gmail.com)
-# last updated 05-16-2024
+# last updated 05-27-2024
 #
 #
 
