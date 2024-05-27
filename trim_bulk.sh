@@ -9,12 +9,15 @@
 #
 #
 
-mkdir trimd_$1
+dir = $(dirname $1)
+base = $(basename $1)
+trimdir = $dir/trimd_$base
+mkdir $trimdir
 
 for f in $1* ;
 do echo -e "------------------------------\n$(basename $f)";
-fastq_quality_trimmer -Q 33 -t 20 -l 130 -i $f -o data_trimmed/trim_$(basename $f) -v;
-done | tee trimd_$1Trim_Statistics.txt
+fastq_quality_trimmer -Q 33 -t 20 -l 130 -i $f -o $trimdir/trim_$(basename $f) -v;
+done | tee $trimdir/Trim_Statistics.txt
 
 #awk script to add all of the stats together into an overall statistics page
 	awk '
@@ -29,7 +32,7 @@ print "Statistics for all data:"}
 END {
 print "\nInput: "input" reads.\nOutput: "output" reads.\nDiscarded: "discarded" (" (discarded/input)*100"%) too-short reads.\n \nStatistics for each trimmed sample: \n"
 }
-' trimd_$1Trim_Statistics.txt | cat - trimd_$1Trim_Statistics.txt > temp
-mv temp trimd_$1Trim_Statistics.txt
+' $trimdir/Trim_Statistics.txt | cat - $trimdir/Trim_Statistics.txt > temp
+mv temp $trimdir/Trim_Statistics.txt
 
-echo -e "\n\nDone! All trimmed sequences are in trimd_$1 and all of the statistics for the trim are saved in trimed_$1Trim_Statistics.txt \n\n"
+echo -e "\n\nDone! All trimmed sequences are in $trimdir/ and all of the statistics for the trim are saved in $trimdir/Trim_Statistics.txt \n\n"
