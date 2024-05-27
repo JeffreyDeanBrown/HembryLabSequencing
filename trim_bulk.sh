@@ -3,7 +3,7 @@
 #
 # trim_script.sh [directory with FASTQ files]
 #
-# This trims all of the fastq files in a directory and spits out a statistics page with all stats added together, as well as all the individual stats for each read
+# This trims all of the fastq files in a directory and spits out a statistics page with a summary as well as info on every sequence trimmed
 # written by Jeff Brown (brown.jeffrey.dean@gmail.com)
 # last updated 05-16-2024
 #
