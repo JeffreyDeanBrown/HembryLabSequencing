@@ -14,6 +14,8 @@ mkdir $1unassembled_PEAR/
 mkdir $1Merged_PEAR/
 mv $1*R1_* $1sequences_R1/
 mv $1*R2_* $1sequences_R2/
+
+script $1Merged_PEAR/merge_$(date +"%d-%b-%Y").txt
 for f in $1sequences_R1/*;
  do
  #name the files being merged
@@ -23,3 +25,5 @@ for f in $1sequences_R1/*;
 	pear -f $f -r $1sequences_R2/$(basename $f | head -c-13)* -o $1unassembled_PEAR/$(basename $f | head -c-13);
 done
 mv $1unassembled_PEAR/*.assembled.fastq $1Merged_PEAR/
+exit
+echo "Done! Your Merged Sequences are in $1Merged_PEAR/ and all of the information was recorded as $1Merged_PEAR/merge_$(date +"%d-%b-%Y").txt"
