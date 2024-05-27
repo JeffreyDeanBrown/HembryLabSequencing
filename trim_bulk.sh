@@ -14,7 +14,7 @@ mkdir trimd_$1
 for f in $1* ;
 do echo -e "------------------------------\n$(basename $f)";
 fastq_quality_trimmer -Q 33 -t 20 -l 130 -i $f -o data_trimmed/trim_$(basename $f) -v;
-done | Tee trimd_$1Trim_Statistics.txt
+done | tee trimd_$1Trim_Statistics.txt
 
 #awk script to add all of the stats together into an overall statistics page
 	awk '
