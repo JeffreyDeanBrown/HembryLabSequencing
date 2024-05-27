@@ -8,10 +8,15 @@
 # last updated 05-16-2024
 #
 #
+
+mkdir trimd_$1
+
 for f in $1* ;
 do echo -e "------------------------------\n$(basename $f)";
 fastq_quality_trimmer -Q 33 -t 20 -l 130 -i $f -o data_trimmed/trim_$(basename $f) -v;
-done > Trim_Statistics.txt
+done | Tee trimd_$1Trim_Statistics.txt
+
+#awk script to add all of the stats together into an overall statistics page
 	awk '
 BEGIN {
 input=(0)
@@ -24,5 +29,7 @@ print "Statistics for all data:"}
 END {
 print "\nInput: "input" reads.\nOutput: "output" reads.\nDiscarded: "discarded" (" (discarded/input)*100"%) too-short reads.\n \nStatistics for each trimmed sample: \n"
 }
-' Trim_Statistics.txt | cat - Trim_Statistics.txt > temp
-mv temp Trim_Statistics.txt
+' trimd_$1Trim_Statistics.txt | cat - trimd_$1Trim_Statistics.txt > temp
+mv temp trimd_$1Trim_Statistics.txt
+
+echo "\n\nDone! All trimmed sequences are in trimd_$1 and all of the statistics for the trim are saved in trimed_$1Trim_Statistics.txt \n\n"
