@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # This will install pear version 9.11 onto any unix system, including necessary updates to the make files
 # written by Jeffrey Brown (brown.jeffrey.dean@gmail.com)
 # last updated 05-16-2024
