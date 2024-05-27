@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # pearing.sh [directory containing reads]
 # This script will separate illumina sequences into R1 and R2 reads, then merged the R1 and R2 samples one at a time using PEAR
 # written by Jeff Brown (brown.jeffrey.dean@gmail.com)
