@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
-
+#
+#
 # trim_script.sh [directory with FASTQ files]
+#
 # This trims all of the fastq files in a directory and spits out a statistics page with all stats added together, as well as all the individual stats for each read
 # written by Jeff Brown (brown.jeffrey.dean@gmail.com)
 # last updated 05-16-2024
+#
+#
 for f in $1* ;
 do echo -e "------------------------------\n$(basename $f)";
 fastq_quality_trimmer -Q 33 -t 20 -l 130 -i $f -o data_trimmed/trim_$(basename $f) -v;
