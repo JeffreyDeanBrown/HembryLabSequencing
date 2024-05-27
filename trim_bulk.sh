@@ -32,4 +32,4 @@ print "\nInput: "input" reads.\nOutput: "output" reads.\nDiscarded: "discarded" 
 ' trimd_$1Trim_Statistics.txt | cat - trimd_$1Trim_Statistics.txt > temp
 mv temp trimd_$1Trim_Statistics.txt
 
-echo "\n\nDone! All trimmed sequences are in trimd_$1 and all of the statistics for the trim are saved in trimed_$1Trim_Statistics.txt \n\n"
+echo -e "\n\nDone! All trimmed sequences are in trimd_$1 and all of the statistics for the trim are saved in trimed_$1Trim_Statistics.txt \n\n"
