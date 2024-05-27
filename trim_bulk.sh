@@ -9,9 +9,9 @@
 #
 #
 
-dir = $(dirname $1)
-base = $(basename $1)
-trimdir = $dir/trimd_$base
+dir=$(dirname $1)
+base=$(basename $1)
+trimdir=$dir/trimd_$base
 mkdir $trimdir
 
 for f in $1* ;
