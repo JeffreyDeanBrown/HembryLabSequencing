@@ -26,4 +26,4 @@ done | tee $1Merged_PEAR/merge_$(date +"%d-%b-%Y").txt
 
 mv $1unassembled_PEAR/*.assembled.fastq $1Merged_PEAR/
 
-echo "\n\nDone! Your Merged Sequences are in $1Merged_PEAR/ and all of the information on screen was recorded as $1Merged_PEAR/merge_$(date +"%d-%b-%Y").txt\n\n"
+echo -e "\n\nDone! Your Merged Sequences are in $1Merged_PEAR/ and all of the information on screen was recorded as $1Merged_PEAR/merge_$(date +"%d-%b-%Y").txt\n\n"
