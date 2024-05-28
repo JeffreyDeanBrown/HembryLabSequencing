@@ -21,7 +21,7 @@ for f in $1sequences_R1/*;
 	echo $f;
 	echo $1sequences_R2/$(basename $f | head -c-13)*;
  #merge the files (pear -f forward/read.fastq -r reverse/read.fastq -o output/path/merged_and_unnassembled
-	pear -f $f -r $1sequences_R2/$(basename $f | head -c-13)* -o $1unassembled_PEAR/$(basename $f | head -c-13);
+	pear -f $f -r $1sequences_R2/$(basename $f | head -c-14)* -o $1unassembled_PEAR/$(basename $f | head -c-14);
 done | tee $1Merged_PEAR/merge_$(date +"%d-%b-%Y").txt
 
 mv $1unassembled_PEAR/*.assembled.fastq $1Merged_PEAR/
